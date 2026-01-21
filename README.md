@@ -1,7 +1,12 @@
 # Sistema de Inventario Abitmedia
 
+## Desarrollado por
+- **Nombre**: Eddie Santiago Lemos Vargas
+- **Email**: santiledin@gmail.com
+- **GitHub**: https://github.com/santiledin
+
 ## Descripción del Proyecto
-Este es un sistema de gestión de inventario desarrollado en **PHP 8.2** utilizando el framework **Yii2**. El proyecto sigue una arquitectura MVC robusta con implementación de Service/Repository pattern para lógica de negocio compleja, contenedorización con Docker, y un estricto control de acceso basado en roles (RBAC).
+Este es un sistema de gestión de inventario desarrollado en **PHP 8.2** utilizando el framework **Yii2** para mi prueba técnica de ABITMEDIA. El proyecto sigue una arquitectura MVC robusta con implementación de Service/Repository pattern para lógica de negocio compleja, contenedorización con Docker, y un estricto control de acceso basado en roles (RBAC).
 
 El objetivo es proporcionar una solución "production-ready" con buenas prácticas de seguridad, escalabilidad y mantenibilidad.
 
@@ -13,7 +18,7 @@ El objetivo es proporcionar una solución "production-ready" con buenas práctic
 
 1.  **Clonar el repositorio**:
     ```bash
-    git clone <url-del-repositorio>
+    git clone https://github.com/santiledin/prueba_abitmedia.git
     cd prueba_abitmedia
     ```
 
