@@ -1,0 +1,38 @@
+# Archivos de entorno y configuración local
+.env
+/config/db.php
+/config/params-local.php
+
+# Dependencias de Composer
+/vendor/
+composer.phar
+
+# Archivos compilados y assets
+/web/assets/
+
+# Archivos de tiempo de ejecución (logs, cache, debug)
+/runtime/
+
+# Directorios de IDE
+.idea/
+.vscode/
+.nbproject/
+.buildpath
+.project
+.settings/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Vagrant
+.vagrant/
+
+# Docker (si hay volúmenes locales no deseados)
+/docker/mysql/data/
+
+# Tests
+/tests/_output/
+/tests/_support/_generated/
+/phpunit.xml
+phpunit.phar

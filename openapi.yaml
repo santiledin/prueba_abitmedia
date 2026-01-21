@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: API de Inventario Abitmedia
+  description: Documentación de la API REST para el sistema de gestión de inventario.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Servidor de Desarrollo
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          example: admin
+        password:
+          type: string
+          example: admin123
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Token de acceso para futuras peticiones
+        user_id:
+          type: integer
+        username:
+          type: string
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        stock:
+          type: integer
+
+paths:
+  /api/login:
+    post:
+      summary: Iniciar sesión
+      description: Autentica un usuario y retorna un token de acceso.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '422':
+          description: Credenciales inválidas
+
+  /api/products:
+    get:
+      summary: Listar productos
+      description: Obtiene la lista completa de productos. Requiere autenticación.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '401':
+          description: No autorizado (Token faltante o inválido)
