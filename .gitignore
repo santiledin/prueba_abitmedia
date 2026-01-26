@@ -1,6 +1,5 @@
 # Archivos de entorno y configuración local
 .env
-/config/db.php
 /config/params-local.php
 
 # Dependencias de Composer
